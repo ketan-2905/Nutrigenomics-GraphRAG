@@ -1,0 +1,11 @@
+.venv
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+chroma_db
+chroma_db_test
+.git
+*.md
+.env.example
+infra/grafana/provisioning

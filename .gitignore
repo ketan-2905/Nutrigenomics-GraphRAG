@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Testing
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Databases / vector store
+chroma_db/
+chroma_db_test/
+
+# Raw / processed data (large files, not source code)
+data/raw/
+data/processed/
+
+# Logs
+*.log
+logs/
+
+# Docker volumes (local bind mounts)
+neo4j_data/
+redis_data/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+.claude/
+.cursor/ 
+*implementation*.md
