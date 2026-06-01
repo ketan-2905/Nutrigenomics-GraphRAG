@@ -1,0 +1,9 @@
+trait_id,trait_name,category
+T001,Folate metabolism,Nutrient metabolism
+T002,High homocysteine,Biomarker
+T003,Cardiovascular risk,Disease risk
+T004,Glucose metabolism,Metabolic health
+T005,Type 2 diabetes risk,Disease risk
+T006,Appetite regulation,Weight management
+T007,Lipid metabolism,Metabolic health
+T008,Caffeine metabolism,Lifestyle response

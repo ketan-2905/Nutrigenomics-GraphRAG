@@ -1,0 +1,36 @@
+source,relation,target,evidence
+rs1801133,LOCATED_IN,MTHFR,Seed knowledge
+rs1801131,LOCATED_IN,MTHFR,Seed knowledge
+MTHFR,AFFECTS,Folate metabolism,Seed knowledge
+Folate metabolism,RELATED_TO,High homocysteine,Seed knowledge
+High homocysteine,INCREASES_RISK_OF,Cardiovascular risk,Seed knowledge
+Folate,SUPPORTS,Folate metabolism,Seed knowledge
+Vitamin B12,SUPPORTS,Folate metabolism,Seed knowledge
+Vitamin B6,SUPPORTS,High homocysteine,Seed knowledge
+Spinach,CONTAINS,Folate,Seed knowledge
+Lentils,CONTAINS,Folate,Seed knowledge
+Lentils,CONTAINS,Fiber,Seed knowledge
+rs7903146,LOCATED_IN,TCF7L2,Seed knowledge
+TCF7L2,AFFECTS,Glucose metabolism,Seed knowledge
+Glucose metabolism,RELATED_TO,Type 2 diabetes risk,Seed knowledge
+Fiber,SUPPORTS,Glucose metabolism,Seed knowledge
+Magnesium,SUPPORTS,Glucose metabolism,Seed knowledge
+Oats,CONTAINS,Fiber,Seed knowledge
+Almonds,CONTAINS,Magnesium,Seed knowledge
+rs9939609,LOCATED_IN,FTO,Seed knowledge
+FTO,AFFECTS,Appetite regulation,Seed knowledge
+Fiber,SUPPORTS,Appetite regulation,Seed knowledge
+rs429358,LOCATED_IN,APOE,Seed knowledge
+APOE,AFFECTS,Lipid metabolism,Seed knowledge
+Omega-3 fatty acids,SUPPORTS,Lipid metabolism,Seed knowledge
+Fish,CONTAINS,Omega-3 fatty acids,Seed knowledge
+rs762551,LOCATED_IN,CYP1A2,Seed knowledge
+CYP1A2,AFFECTS,Caffeine metabolism,Seed knowledge
+Coffee,CONTAINS,Caffeine,Seed knowledge
+Spinach,CONTAINS,Magnesium,Seed knowledge
+Spinach,CONTAINS,Fiber,Seed knowledge
+Fish,CONTAINS,Vitamin B12,Seed knowledge
+Eggs,CONTAINS,Vitamin B12,Seed knowledge
+Lentils,CONTAINS,Vitamin B6,Seed knowledge
+Almonds,CONTAINS,Fiber,Seed knowledge
+Oats,CONTAINS,Magnesium,Seed knowledge

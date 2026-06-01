@@ -1,0 +1,8 @@
+nutrient_id,nutrient_name,role
+N001,Folate,Supports methylation and homocysteine regulation
+N002,Vitamin B12,Supports methylation and red blood cell function
+N003,Vitamin B6,Supports amino acid metabolism and homocysteine regulation
+N004,Omega-3 fatty acids,Supports lipid and inflammation pathways
+N005,Fiber,Supports glucose control and gut health
+N006,Magnesium,Supports insulin sensitivity and metabolic health
+N007,Caffeine,Stimulant metabolized by CYP1A2

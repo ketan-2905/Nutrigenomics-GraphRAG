@@ -1,0 +1,8 @@
+food_id,food_name,nutrients
+F001,Spinach,Folate;Magnesium;Fiber
+F002,Lentils,Folate;Fiber;Vitamin B6
+F003,Eggs,Vitamin B12
+F004,Fish,Omega-3 fatty acids;Vitamin B12
+F005,Almonds,Magnesium;Fiber
+F006,Coffee,Caffeine
+F007,Oats,Fiber;Magnesium

@@ -1,0 +1,9 @@
+snp_id,gene,variant,description
+rs1801133,MTHFR,C677T,Associated with folate metabolism and homocysteine regulation
+rs1801131,MTHFR,A1298C,Associated with folate cycle variation
+rs7903146,TCF7L2,C/T,Associated with glucose metabolism and type 2 diabetes risk
+rs9939609,FTO,A/T,Associated with appetite and obesity-related traits
+rs429358,APOE,C/T,Associated with lipid metabolism and cardiovascular risk
+rs662799,APOA5,T/C,Associated with triglyceride levels
+rs1229984,ADH1B,G/A,Associated with alcohol metabolism
+rs762551,CYP1A2,A/C,Associated with caffeine metabolism
