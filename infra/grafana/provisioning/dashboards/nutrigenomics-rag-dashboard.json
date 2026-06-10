@@ -1,0 +1,100 @@
+{
+  "title": "Nutrigenomics GraphRAG",
+  "uid": "nutrigenomics-rag",
+  "schemaVersion": 38,
+  "version": 1,
+  "refresh": "30s",
+  "panels": [
+    {
+      "id": 1,
+      "title": "Total RAG Requests",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 4, "x": 0, "y": 0},
+      "targets": [{"expr": "sum(rag_requests_total)", "refId": "A"}],
+      "fieldConfig": {"defaults": {"color": {"mode": "thresholds"}, "unit": "short"}}
+    },
+    {
+      "id": 2,
+      "title": "Request Rate (req/s)",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 4, "x": 4, "y": 0},
+      "targets": [{"expr": "sum(rate(rag_requests_total[5m]))", "refId": "A"}],
+      "fieldConfig": {"defaults": {"unit": "reqps"}}
+    },
+    {
+      "id": 3,
+      "title": "Error Rate",
+      "type": "stat",
+      "gridPos": {"h": 4, "w": 4, "x": 8, "y": 0},
+      "targets": [{"expr": "sum(rate(rag_errors_total[5m]))", "refId": "A"}],
+      "fieldConfig": {"defaults": {"unit": "reqps", "color": {"mode": "thresholds"}, "thresholds": {"steps": [{"color": "green", "value": null}, {"color": "red", "value": 0.01}]}}}
+    },
+    {
+      "id": 4,
+      "title": "Cache Hit Ratio",
+      "type": "gauge",
+      "gridPos": {"h": 4, "w": 4, "x": 12, "y": 0},
+      "targets": [{"expr": "sum(rate(rag_cache_hits_total[5m])) / (sum(rate(rag_cache_hits_total[5m])) + sum(rate(rag_cache_misses_total[5m])))", "refId": "A"}],
+      "fieldConfig": {"defaults": {"unit": "percentunit", "min": 0, "max": 1, "thresholds": {"steps": [{"color": "red", "value": null}, {"color": "yellow", "value": 0.3}, {"color": "green", "value": 0.7}]}}}
+    },
+    {
+      "id": 5,
+      "title": "Request Latency p95 (s)",
+      "type": "timeseries",
+      "gridPos": {"h": 6, "w": 12, "x": 0, "y": 4},
+      "targets": [
+        {"expr": "histogram_quantile(0.95, sum(rate(rag_request_latency_seconds_bucket[5m])) by (le))", "legendFormat": "p95", "refId": "A"},
+        {"expr": "histogram_quantile(0.50, sum(rate(rag_request_latency_seconds_bucket[5m])) by (le))", "legendFormat": "p50", "refId": "B"}
+      ],
+      "fieldConfig": {"defaults": {"unit": "s"}}
+    },
+    {
+      "id": 6,
+      "title": "LLM Latency p95 (s)",
+      "type": "timeseries",
+      "gridPos": {"h": 6, "w": 12, "x": 12, "y": 4},
+      "targets": [
+        {"expr": "histogram_quantile(0.95, sum(rate(rag_llm_latency_seconds_bucket[5m])) by (le))", "legendFormat": "LLM p95", "refId": "A"},
+        {"expr": "histogram_quantile(0.95, sum(rate(rag_graph_retrieval_latency_seconds_bucket[5m])) by (le))", "legendFormat": "Graph p95", "refId": "B"},
+        {"expr": "histogram_quantile(0.95, sum(rate(rag_vector_retrieval_latency_seconds_bucket[5m])) by (le))", "legendFormat": "Vector p95", "refId": "C"}
+      ],
+      "fieldConfig": {"defaults": {"unit": "s"}}
+    },
+    {
+      "id": 7,
+      "title": "Cache Hits vs Misses",
+      "type": "timeseries",
+      "gridPos": {"h": 6, "w": 12, "x": 0, "y": 10},
+      "targets": [
+        {"expr": "sum(rate(rag_cache_hits_total[5m])) by (cache_type)", "legendFormat": "hits {{cache_type}}", "refId": "A"},
+        {"expr": "sum(rate(rag_cache_misses_total[5m]))", "legendFormat": "misses", "refId": "B"}
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Answer Source Distribution",
+      "type": "piechart",
+      "gridPos": {"h": 6, "w": 6, "x": 12, "y": 10},
+      "targets": [{"expr": "sum(rag_answer_source_total) by (answer_source)", "legendFormat": "{{answer_source}}", "refId": "A"}]
+    },
+    {
+      "id": 9,
+      "title": "Evidence Chunks Returned",
+      "type": "timeseries",
+      "gridPos": {"h": 6, "w": 6, "x": 18, "y": 10},
+      "targets": [
+        {"expr": "sum(rate(rag_graph_paths_returned_sum[5m])) / sum(rate(rag_graph_paths_returned_count[5m]))", "legendFormat": "avg graph paths", "refId": "A"},
+        {"expr": "sum(rate(rag_vector_chunks_returned_sum[5m])) / sum(rate(rag_vector_chunks_returned_count[5m]))", "legendFormat": "avg vector chunks", "refId": "B"}
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Errors by Endpoint",
+      "type": "timeseries",
+      "gridPos": {"h": 6, "w": 12, "x": 0, "y": 16},
+      "targets": [{"expr": "sum(rate(rag_errors_total[5m])) by (endpoint)", "legendFormat": "{{endpoint}}", "refId": "A"}]
+    }
+  ],
+  "time": {"from": "now-1h", "to": "now"},
+  "timezone": "browser"
+}
